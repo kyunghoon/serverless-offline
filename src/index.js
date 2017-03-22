@@ -688,7 +688,7 @@ class Offline {
                   if (responseTemplatesKeys.length) {
 
                     // BAD IMPLEMENTATION: first key in responseTemplates
-                    const responseTemplate = responseTemplates[responseContentType];
+                    const responseTemplate = responseTemplates[responseContentType].trim();
 
                     if (responseTemplate) {
 
