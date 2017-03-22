@@ -535,6 +535,13 @@ class Offline {
 
             event.isOffline = true;
 
+            // add authorizer context
+            if (endpoint.authorizer && request.auth !== null && request.auth.credentials) {
+              event.requestContext = {
+                authorizer: request.auth.credentials.context,
+              };
+            }
+
             if (this.serverless.service.custom && this.serverless.service.custom.stageVariables) {
               event.stageVariables = this.serverless.service.custom.stageVariables;
             }
