@@ -6,7 +6,7 @@ module.exports = {
   getFunctionOptions(fun, funName, servicePath) {
 
     // Split handler into method name and path i.e. handler.run
-    const handlerPath = fun.handler.split('.')[0];
+    const handlerPath = fun.handler.substr(0, fun.handler.lastIndexOf('.'));
     const handlerName = fun.handler.split('/').pop().split('.')[1];
 
     return {
