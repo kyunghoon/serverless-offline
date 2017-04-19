@@ -64,11 +64,11 @@ module.exports = function createAuthScheme(authFun, authorizerOptions, funName, 
 
         const onSuccess = policy => {
         // Validate that the policy document has the principalId set
-          if (!policy.principalId) {
-            serverlessLog(`Authorization response did not include a principalId: (λ: ${authFunName})`, err);
+          //if (!policy.principalId) {
+            //serverlessLog(`Authorization response did not include a principalId: (λ: ${authFunName})`, err);
 
-            return reply(Boom.forbidden('No principalId set on the Response'));
-          }
+            //return reply(Boom.forbidden('No principalId set on the Response'));
+          //}
 
           serverlessLog(`Authorization function returned a successful response: (λ: ${authFunName})`, policy);
 
