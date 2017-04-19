@@ -5,7 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
 This [Serverless](https://github.com/serverless/serverless) plugin emulates AWS λ and API Gateway on your local machine to speed up your development cycles.
-To do so, it starts an HTTP server that handles the request's lifecycle like API does and invokes your handlers.
+To do so, it starts an HTTP server that handles the request's lifecycle like APIG does and invokes your handlers.
 
 **Features:**
 - Nodejs λ only.
@@ -272,7 +272,7 @@ Serverless offline plugin can invoke shell scripts when a simulated server has b
 ## Simulation quality
 
 This plugin simulates API Gateway for many practical purposes, good enough for development - but is not a perfect simulator.
-Specifically, Lambda currently runs on Node v4.3.2, whereas *Offline* runs on your own runtime where no memory limits are enforced.
+Specifically, Lambda currently runs on Node v4.3.2 and v6.10.0, whereas *Offline* runs on your own runtime where no memory limits are enforced.
 
 
 ## Credits and inspiration
