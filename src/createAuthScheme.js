@@ -21,8 +21,8 @@ module.exports = function createAuthScheme(authFun, authorizerOptions, funName, 
   return () => ({
 
     authenticate(request, reply) {
-      console.log(''); // Just to make things a little pretty
-      serverlessLog(`Running Authorization function for ${request.method} ${request.path} (λ: ${authFunName})`);
+      //console.log(''); // Just to make things a little pretty
+      //serverlessLog(`Running Authorization function for ${request.method} ${request.path} (λ: ${authFunName})`);
 
       // Get Authorization header
       const req = request.raw.req;
@@ -70,7 +70,7 @@ module.exports = function createAuthScheme(authFun, authorizerOptions, funName, 
             //return reply(Boom.forbidden('No principalId set on the Response'));
           //}
 
-          serverlessLog(`Authorization function returned a successful response: (λ: ${authFunName})`, policy);
+          //serverlessLog(`Authorization function returned a successful response: (λ: ${authFunName})`, policy);
 
           if (policy.policyDocument.Statement[0].Effect === 'Deny') {
             serverlessLog(`Authorization response didn't authorize user to access resource: (λ: ${authFunName})`, err);

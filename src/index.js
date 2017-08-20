@@ -453,14 +453,15 @@ class Offline {
           handler: (request, reply) => { // Here we go
             request.payload = request.payload && request.payload.toString();
 
-            this.printBlankLine();
+            //this.printBlankLine();
             this.serverlessLog(`${method} ${request.path} (λ: ${funName})`);
             if (firstCall) {
               this.serverlessLog('The first request might take a few extra seconds');
               firstCall = false;
             }
 
-            this.serverlessLog(protectedRoutes);
+            //this.serverlessLog(protectedRoutes);
+
             // Check for APIKey
             if (_.includes(protectedRoutes, fullPath)) {
               const errorResponse = response => response({ message: 'Forbidden' }).code(403).type('application/json').header('x-amzn-ErrorType', 'ForbiddenException');
